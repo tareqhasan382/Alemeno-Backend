@@ -9,7 +9,11 @@ import { CourseRoute } from './app/modules/course/students.route'
 import { UserRoute } from './app/modules/user/user.route'
 
 const corsOptions = {
-  origin: ['http://localhost:5173'],
+  origin: [
+    'http://localhost:5173',
+    'https://alemeno-front-end-task.vercel.app',
+    'https://alemeno-front-end-task.vercel.app/',
+  ],
   credentials: true, //access-control-allow-credentials:true
   optionSuccessStatus: 200,
 }

@@ -1,6 +1,6 @@
-# Heliverse Website Backend
+# Backend StartUp
 
-The Food Website built using TypeScript, Express.js, Zod validation, and MongoDB, .
+This Website built using TypeScript, Express.js, Zod validation, Mongoose and MongoDB, .
 
 # Setup Projet
 
