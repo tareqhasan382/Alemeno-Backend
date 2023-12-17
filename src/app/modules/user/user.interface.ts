@@ -1,4 +1,4 @@
-import { Model, Types } from 'mongoose'
+import { Model } from 'mongoose'
 
 export type IUser = {
   _id?: string
@@ -7,7 +7,6 @@ export type IUser = {
   email: string
   password: string
   gender: string
-  enroll: Types.ObjectId
 }
 
 export type IUserModel = Model<IUser, Record<string, unknown>>

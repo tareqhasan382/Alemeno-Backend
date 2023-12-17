@@ -14,7 +14,6 @@ const userSchema = new Schema<IUser>(
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
     gender: { type: String, required: true },
-    enroll: { type: Schema.Types.ObjectId, ref: 'course' },
   },
   { timestamps: true }
 )

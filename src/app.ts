@@ -7,6 +7,7 @@ import httpStatus from 'http-status'
 import cookieParser from 'cookie-parser'
 import { CourseRoute } from './app/modules/course/students.route'
 import { UserRoute } from './app/modules/user/user.route'
+import { EnrollRoute } from './app/modules/enroll/enroll.route'
 
 const corsOptions = {
   origin: [
@@ -31,6 +32,7 @@ app.get('/', (req, res) => {
 // app.use('/api', AuthRoute)
 app.use('/api', CourseRoute)
 app.use('/api', UserRoute)
+app.use('/api', EnrollRoute)
 //Testing Route
 // app.get('/', async (req: Request, res: Response, next: NextFunction) => {
 //   throw new Error('Testing Error log')

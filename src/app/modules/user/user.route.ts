@@ -11,7 +11,9 @@ router.get('/users', authVerify(ENUM_ROLE.USER), UserController.getCourses),
     UserController.getSingleCourse
   ),
   router.post('/login', UserController.login)
+
 //   router.patch('/user/:id', UserController.)
 // router.delete('/user/:id', UserController.deleteUser)
+
 router.post('/signup', UserController.createCourse)
 export const UserRoute = router

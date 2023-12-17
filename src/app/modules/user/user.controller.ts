@@ -20,8 +20,8 @@ const createCourse = catchAsync(async (req: Request, res: Response) => {
     const result = await UserService.createCourse(req.body)
 
     res.json({
-      status: 'false',
-      message: 'Email Already Exist !!',
+      status: 'true',
+      message: 'User Create successfully !!',
       data: result,
     })
   }
@@ -98,9 +98,34 @@ const getSingleCourse = catchAsync(async (req: Request, res: Response) => {
     console.log(error)
   }
 })
+
+const courseEnrool = catchAsync(async (req: Request, res: Response) => {
+  try {
+    if (req.user) {
+      const { userId }: any = req.user
+      console.log('UserId:', userId)
+      console.log('body:', req.body)
+      //const findUser = await UserModel.findOne({ email: email }).select('email _id')
+      const result = await UserModel.findOneAndUpdate(
+        { _id: userId },
+        { $push: { enroll: req.body } },
+        { new: true }
+      )
+      //MyModel.findByIdAndUpdate(req.body.modelId, {$set: req.body}, {new: true})
+      res.json({
+        status: 'true',
+        message: 'Course enroll successfully !!',
+        data: result,
+      })
+    }
+  } catch (error) {
+    return res.json({ status: 'false', message: 'Server Error' })
+  }
+})
 export const UserController = {
   createCourse,
   login,
   getCourses,
   getSingleCourse,
+  courseEnrool,
 }
